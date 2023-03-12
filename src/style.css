@@ -1,0 +1,21 @@
+/* if you're going to use Tailwind stay in the Tailwind 
+context and don't rewrite css */
+@tailwind base; /*make settings and apply css to tag elements directly like: <p> <h1> ...*/
+@tailwind components; /*overrides Base by adding component-level css writing functionality*/
+@tailwind utilities; /*overrides Components allowing you to add more specific css inside components*/
+
+/* If you need to create a css for several elements 
+in common, for example, elements of a form or several 
+forms, it is recommended to create a component that 
+has these styles */
+@layer components {
+  .search-input {
+    @apply mb-5 block w-60;
+  }
+}
+
+@layer utilities {
+  .grayed-out-disabled {
+    @apply disabled:opacity-50;
+  }
+}
